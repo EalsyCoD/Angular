@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+
 import { products as data } from './data/products';
+
 import { IProduct } from './models/product';
 
 @Component({

@@ -1,15 +1,29 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { ProductAlertsComponent } from './components/product-alerts/product-alerts.component';
-import { ProductComponent } from './components/product-list/product.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+
+import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [AppComponent, ProductComponent, ProductAlertsComponent],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      { path: '', component: ProductListComponent },
+      { path: 'products/:productId', component: ProductDetailsComponent },
+    ]),
+  ],
+  declarations: [
+    AppComponent,
+    ProductListComponent,
+    ProductAlertsComponent,
+    ProductDetailsComponent,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
