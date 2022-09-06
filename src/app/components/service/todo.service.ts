@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { ITodo } from 'src/app/models/product';
+import { ITodo } from 'src/app/models/todo';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -24,5 +24,9 @@ export class TaskService {
 
   addTask(task: ITodo): Observable<ITodo> {
     return this.http.post<ITodo>(this.apiUrl, task, httpOptions);
+  }
+  delTask(task: ITodo): Observable<ITodo> {
+    const url = `${this.apiUrl}/${task.id}`;
+    return this.http.delete<ITodo>(url, httpOptions);
   }
 }

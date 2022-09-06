@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoAddComponent } from './components/todo-add/todo-add.component';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   imports: [BrowserModule, HttpClientModule, ReactiveFormsModule, FormsModule],
@@ -15,6 +16,7 @@ import { TodoAddComponent } from './components/todo-add/todo-add.component';
     HeaderComponent,
     TodoListComponent,
     TodoAddComponent,
+    ButtonComponent,
   ],
   bootstrap: [AppComponent],
 })
