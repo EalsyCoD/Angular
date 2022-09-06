@@ -4,6 +4,7 @@
         {{todo.name}}
     </p>
     <button (click)="onDelete(todo)">Delete</button>
+    <button (click)="toggleTask(todo)">Completed</button>
     <div>{{todo | json}}</div>
 </div>
 

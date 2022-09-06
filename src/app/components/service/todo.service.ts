@@ -29,4 +29,9 @@ export class TaskService {
     const url = `${this.apiUrl}/${task.id}`;
     return this.http.delete<ITodo>(url, httpOptions);
   }
+
+  updateTask(task: ITodo): Observable<ITodo> {
+    const url = `${this.apiUrl}/${task.id}`;
+    return this.http.put<ITodo>(url, task, httpOptions);
+  }
 }

@@ -11,6 +11,7 @@ import { TaskService } from '../service/todo.service';
 export class TodoListComponent implements OnInit {
   todo: ITodo[] = [];
   @Output() onDeleteTask: EventEmitter<ITodo> = new EventEmitter();
+  @Output() onCompletedTask: EventEmitter<ITodo> = new EventEmitter();
 
   constructor(private todoService: TaskService) {}
   ngOnInit(): void {
@@ -26,5 +27,9 @@ export class TodoListComponent implements OnInit {
       .subscribe(
         () => (this.todo = this.todo.filter((item) => task.id !== item.id))
       );
+  }
+  toggleTask(task: ITodo) {
+    task.completed = !task.completed;
+    this.todoService.updateTask(task).subscribe();
   }
 }
