@@ -1,12 +1,12 @@
-# Angular training
+# Angular training(2 branches)
 
 ## Usage
 
-## Branch Master
+## Branch Master(Now this branch with shop app)
 
 `npm i => npm run start`
 
-## Branch Todo
+## Branch Todo(branch with todo app)
 
 `npm i => npm run start`
 
