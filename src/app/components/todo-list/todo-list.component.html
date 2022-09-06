@@ -1,10 +1,12 @@
 <app-todo-add (onAddTask)="addTask($event)" ></app-todo-add>
-<div *ngFor="let todo of todo">
+<div [ngClass]="{completed: todo.completed}" *ngFor="let todo of todo">
+    <div>
     <p>
         {{todo.name}}
     </p>
     <button (click)="onDelete(todo)">Delete</button>
     <button (click)="toggleTask(todo)">Completed</button>
     <div>{{todo | json}}</div>
+    </div>
 </div>
 
