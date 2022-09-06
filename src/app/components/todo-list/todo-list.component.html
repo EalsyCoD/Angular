@@ -1,0 +1,8 @@
+<app-todo-add (onAddTask)="addTask($event)" ></app-todo-add>
+<div *ngFor="let todo of todo">
+    <p>
+        {{todo.name}}
+    </p>
+    <div>{{todo | json}}</div>
+</div>
+
